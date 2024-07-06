@@ -46,7 +46,7 @@ class SignalMACrossover(ISignalGenerator):
         fast_ma = bars['close'][-self.fast_period:].mean()
         slow_ma = bars['close'].mean()
 
-        # Ensure open_positions is not None before accessing its keys
+        #Asegurarnos de que open_positions no sea None para evitar errores
         if open_positions is not None:
             #Detectar una señal de compra (Media por encima)
             if open_positions['LONG'] == 0 and fast_ma > slow_ma:
